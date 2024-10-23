@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    author:     Samson James Ordonez
+    version:    1.0
+    comments:   for COMP 2312 Assignment 06
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <title>Samson James Ordonez - Assignment 06</title>
+    <script src="./src/javascript/assignment06.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper-body">
+        <header class="primary-header flex">
+            <h2>Assignment 06</h2>
+        </header>
+
+        <main>
+            <section>  
+                <h1>JavaScript Event Handling, DOM manipulation, and Form Processing</h1>
+                <p>This assignment involves creating an interactive HTML form that includes various input types, such as text fields, a password input, a date picker, and a dropdown menu for course selection. The form will feature custom CSS for styling and JavaScript for validation to enhance the user experience. Key features include a tooltip for the student ID field and a toggle to show or hide the password. Additionally, the form will have restrictions on date inputs, specific validation rules, and error handling to ensure a comprehensive and user-friendly submission process.</p>
+            </section>
+
+            <section>
+                <h2>HTML Form</h2>
+                <form class="" action="" method="post" id="studentForm">
+
+                    <div class="flex form-elements">
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                    </div>
+            
+                    <div class="flex form-elements">
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                    
+                    <div class="flex form-elements">
+                        <div class="flex" id="form-student-id">
+                            <label for="studentid">Student ID:</label>
+                            <span class="flex tooltip">?
+                                <span class="tooltiptext">A valid BCIT ID starts with 'a0' followed by 7 digits</span>
+                            </span>
+                        </div>
+                        <input type="text" id="studentid" name="studentid" required>
+                    </div>
+            
+                    <div class="flex form-elements">
+                    <label for="password">Password:</label>
+                        <div class="flex" id="form-password">
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" id="togglePassword">Show</button>
+                        </div>
+                    </div>
+            
+                    <div class="flex form-elements">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    </div>
+            
+                    <div class="flex form-elements">
+                    <label for="courses">Courses:</label>
+                    <select id="courses" name="courses" required>
+                        <option value="" selected disabled>Choose your course</option>
+                        <option value="COMP1850">COMP1850</option>
+                        <option value="COMP2132">COMP2132</option>
+                        <option value="COMP2913">COMP2913</option>
+                        <option value="COMP3012">COMP3012</option>
+                        <option value="COMP3015">COMP3015</option>
+                    </select>
+                    </div>
+            
+                    <div class="flex form-elements">
+                    <input id="form-submit" type="submit" value="Submit">
+                    </div>
+                </form>            
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>
