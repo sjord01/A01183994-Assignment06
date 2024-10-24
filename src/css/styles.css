@@ -209,6 +209,25 @@ input[type="submit"]:hover, #togglePassword:hover {
     color: red;
 }
 
+/* Updated styles for input-error */
+input.input-error,
+select.input-error {
+    color: red !important; /* Use !important to override other styles */
+    border: 1px solid red !important; /* Ensure border is red */
+    background-color: #fff0f0 !important; /* Light red background */
+}
+
+/* More specific selectors for each input type */
+input#firstname.input-error,
+input#lastname.input-error,
+input#studentid.input-error,
+input#password.input-error,
+input#date.input-error,
+select#courses.input-error {
+    color: red !important;
+    background-color: #fff0f0 !important;
+}
+
 #form-student-id {
     align-items: center;
     gap: 0.75rem;
