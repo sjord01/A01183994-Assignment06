@@ -33,7 +33,7 @@ header {
 /* BUTTONS */
 
 button {
-    font-family: var(--heading-font-bold);
+    font-family: var(--secondary-font-regular);
     padding: 0.75rem 2.75rem;
     border-style: none;
     border-radius: 50px;
@@ -42,14 +42,18 @@ button {
 }
 
 .btn-main {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     background-color: var(--light-blue-02);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
 }
 
-.wrapper-hero-btn {
-    justify-content: center;
-    align-items: center;
-    grid-area: 4 / 1 / 4 / -1 ;
+.btn-main:hover {
+    background-color: var(--orange-01);
+}
+
+.btn-main:active {
+    transform: scale(0.95);
 }
 
 /* MAIN BODY */
