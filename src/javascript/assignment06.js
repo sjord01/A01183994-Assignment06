@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const errorMessages = {
-        required: fieldName => `${fieldName} cannot be empty`,
+        required: fieldName => `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} cannot be empty`,
         studentId: 'Invalid Student ID format',
         course: 'Please select a course',
         password: 'Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one symbol, with no spaces',
@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const failedValidation = fieldValidationRules.find(rule => !validations[rule](value));
 
         if (failedValidation) {
-            showError(element, errorMessages[failedValidation === 'required' ? 'required' : fieldName]);
+            const errorMessage = failedValidation === 'required' 
+                ? errorMessages.required(fieldName)
+                : errorMessages[failedValidation];
+            showError(element, errorMessage);
             element.classList.add('error');
             return false;
         }
